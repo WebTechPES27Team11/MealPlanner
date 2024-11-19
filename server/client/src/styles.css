@@ -1,0 +1,646 @@
+:root {
+  --primary-color: #D2691E;    /* Burnt Orange */
+  --secondary-color: #A0522D;  /* Muted Brownish Red */
+  --background-color: #FFF8F0; /* Warm Off-White Background */
+  --text-color: #3C2F2F;       /* Dark Warm Gray Text */
+  --white: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.welcome-section {
+  position: relative;
+  color: #ffffff;
+  padding: 100px 0;
+  min-height: 82vh;
+  overflow: hidden;
+}
+
+.welcome-section::after {
+  content: "";
+  background-image: url("/public/images/WelcomePicture.jpg"); /* Background image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2; /* Places the image behind the overlay */
+}
+
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for contrast */
+  z-index: -1; /* Ensures overlay is on top of the image but behind text */
+}
+
+.welcome-heading,
+.welcome-description {
+  position: relative;
+  z-index: 1; /* Keeps text on top of the overlay */
+}
+
+
+.welcome-section .welcome-heading {
+  text-align: left;
+  font-size: 4.5rem;
+  font-family: 'Arial', serif;
+  color:whitesmoke; /* Dark Burnt Orange */
+  shadow:var(--text-color);
+  font-weight: bold; /* Ensure the text is bold */
+  margin-bottom: 1rem;
+  padding-left: 2rem; /* Add sufficient padding to the left */
+}
+
+.welcome-description {
+  text-align: left; /* Align text to the left */
+  font-size: 1.65rem; /* Increase font size */
+  font-family: 'Arial', sans-serif;
+  color: white; 
+  shadow:var(--text-color);/* Dark Burnt Orange */
+ /* Set text color to white */
+  line-height: 1.6;
+  max-width: 600px;
+  padding-left: 2rem; /* Add sufficient padding to the left */
+  font-weight: bold; /* Ensure the text is bold */
+}
+
+.header {
+  background-color: var(--background-color); /* Use background color variable */
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight:685;
+  
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--text-color); /* Use the text color variable */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary-color); /* Change hover color to primary */
+}
+
+.main-content {
+  padding-top: 80px;
+}
+
+section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.welcome-section h2,
+.meal-gallery-section h2,
+.personalized-plan-section h2,
+.instructions-section h2 {
+  color: var(--primary-color);
+}
+.meal-gallery {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem; /* Increase the gap between cards */
+}
+
+.meal-card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--white);
+  border: 1px solid var(--secondary-color);
+  padding: 1.5rem;
+  height: 200px; /* Increase height of meal card */
+  width: 180px; /* Increase width of meal card */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Add hover effects for dynamic feel */
+.meal-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Increase space between heading and meal cards */
+.meal-gallery-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1.1rem; /* Increase margin-bottom to create more space */
+}
+.meal-gallery-section p{
+
+  margin-bottom: 2rem;
+}
+
+/* Dynamic styling for meal cards */
+
+
+.meal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.meal-card h3 {
+  position: relative;
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+
+.personalized-plan-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fdf3e3;
+}
+
+.section-content {
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  gap: 2rem;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+  margin-top: 2rem;
+  margin-right: 4rem;
+  
+}
+.text-content h2{
+  font-size: 2.25rem;
+  margin-bottom: 0.8rem;
+}
+.text-content p{
+  margin-bottom: 1rem;
+}
+
+
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.section-image {
+  width: 100%;
+  max-height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-1, .img-3 {
+  transform: translateX(-5%);
+}
+
+.img-2 {
+  transform: translateX(5%);
+}
+
+
+
+
+
+
+
+.custom-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.instructions {
+  height:50vh;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--background-color); /* Adjust the background color */
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.instruction-step {
+  background-color: #ffffff;
+  border: none;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: none; /* Remove shadow */
+  width: 250px;
+  height: 200px;
+  margin-top: 2rem;
+}
+
+.instruction-step h3 {
+  color: var(--primary-color); /* Softer orange for the title */
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.instruction-step p {
+  color: #555; /* Darker gray for the paragraph text */
+  margin-top: 0.5rem;
+}
+
+.instruction-step .step-label {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.instructions-title{
+
+  font-size: 2rem;
+  color: #D2691E;
+  margin-bottom: 0.5rem;
+
+}
+
+
+.meal-planner-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.meal-planner-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-planner-container form div {
+  margin-bottom: 10px;
+}
+
+.meal-planner-container form label {
+  font-weight: bold;
+}
+
+.meal-planner-container form input,
+.meal-planner-container form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.meal-planner-container form button {
+  
+  padding: 10px;
+  background-color:#D2691E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  border-radius: 4px;
+}
+
+.meal-planner-container form button:hover {
+  background-color: #A0522D;
+}
+
+
+/* Meal Plan Section Styling */
+.meal-plan-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.meal-plan-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.meal-plan-section p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.generate-plan-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.generate-plan-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Meal Plan Section Styling */
+.meal-plan-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.meal-plan-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.meal-plan-section p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.generate-plan-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.generate-plan-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Meal Planner Form Styling */
+.meal-planner-form-section {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.meal-planner-form-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.meal-planner-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.meal-planner-form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.meal-planner-form input,
+.meal-planner-form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.submit-plan-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.submit-plan-button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* Root Colors */
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+}
+
+h2 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsiveness */
+@media (max-width: 400px) {
+  .modal {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+  }
+}
+
+/*.personalized-plan-section {
+  padding: 3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.personalized-plan-section .section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; 
+}
+
+.personalized-plan-section .text-content {
+  max-width: 45%; 
+  padding-right: 2rem; 
+  text-align: left; 
+}
+
+.personalized-plan-section h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.personalized-plan-section .image-gallery {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 40%; 
+}
+
+.personalized-plan-section .section-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.personalized-plan-section .section-image:hover {
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .personalized-plan-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .personalized-plan-section .section-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .personalized-plan-section .text-content {
+      max-width: 100%;
+      padding-right: 0;
+  }
+
+  .personalized-plan-section .image-gallery {
+      max-width: 100%;
+  }
+} */
